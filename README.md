@@ -14,4 +14,4 @@ They are downloaded from http://www.kennethmoreland.com/color-advice/ generated 
 
 # Screenshots
 <a><img src="https://rawgit.com/james34602/SuperSpectrogram/master/Screenshot1.png"/></a>
-<a><img src="https://rawgit.com/james34602/SuperSpectrogram/master/Screenshot1.png"/></a>
+<a><img src="https://rawgit.com/james34602/SuperSpectrogram/master/Screenshot2.png"/></a>
