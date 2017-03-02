@@ -28,3 +28,6 @@ You need a powerful device to run this app, because the computation may not be A
 
 # Non-Windows user
 Default buffer size for 44.1kHz or 48kHz sampling rate should be approximately divided by 10, should be enough for displaying low frequency, but don't expect you can distinguish frequency within 10Hz.
+
+# More...
+Remove # in .pro file for enabling title bar text peak display.
