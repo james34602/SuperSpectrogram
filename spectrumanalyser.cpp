@@ -45,7 +45,7 @@ void SpectrumAnalyser::runFFT()
             peakAmplitude = m_spectrum[i];
         }
     }
-    QString str = QString("Spectrogram::Peak:%1Hz dB:%3").arg(peakFrec).arg(log10(peakAmplitude)*20.0);
+    QString str = QString("SuperSpectrogram::Peak:%1Hz dB:%3").arg(peakFrec).arg(log10(peakAmplitude)*20.0);
     changeTitle(str);
 #else
     for (int i = 0; i < m_fftout.size(); ++i)
@@ -79,7 +79,7 @@ void SpectrumAnalyser::setParameters(int nfft, int overlap)
 #ifdef __ANDROID__
     m_plan = fftw_plan_dft_r2c_1d(m_nFFT, m_fftin.data(), reinterpret_cast<fftw_complex*>(m_fftout.data()), FFTW_ESTIMATE);
 #else
-    m_plan = fftw_plan_dft_r2c_1d(m_nFFT, m_fftin.data(), reinterpret_cast<fftw_complex*>(m_fftout.data()), FFTW_MEASURE);
+    m_plan = fftw_plan_dft_r2c_1d(m_nFFT, m_fftin.data(), reinterpret_cast<fftw_complex*>(m_fftout.data()), FFTW_PATIENT);
 #endif
     m_frequenceUnit = m_audioFormat.sampleRate() / m_nFFT;
 }

@@ -1,6 +1,6 @@
 QT       += core gui multimedia widgets
  
-TARGET = spectrogram
+TARGET = SuperSpectrogram
 TEMPLATE = app
 
 SOURCES += main.cpp\

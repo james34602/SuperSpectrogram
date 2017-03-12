@@ -9,6 +9,7 @@ class Palette
 {
 public:
     Palette();
+    void deleteMap();
     void setVectorAt(double pos, QVector3D color);
     void setColorAt(double pos, QColor color);
     QVector3D getVectorAt(double pos) const;

@@ -15,6 +15,8 @@ int main(int argc, char *argv[])
         OverlapSample = 750;
 #else
         OverlapSample = 1000;
+        msgBox.setText("FFTW pre-optimization stage...");
+        msgBox.exec();
 #endif
         SamplLength = 4800;
       }

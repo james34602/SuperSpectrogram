@@ -5,6 +5,11 @@ Palette::Palette()
 {
 }
 
+void Palette::deleteMap()
+{
+    m_table.clear();
+}
+
 void Palette::setVectorAt(double pos, QVector3D color)
 {
     m_table.insert(pos, color);

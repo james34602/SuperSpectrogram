@@ -5,11 +5,10 @@
 #include <limits>
 #include "colormap.h"
 Spectrogram::Spectrogram(SpectrumAnalyser *analyser, QWidget *parent) :
-    QWidget(parent), m_analyser(analyser)
+    paletteCount(0), QWidget(parent), m_analyser(analyser)
 {
   connect(m_analyser, SIGNAL(spectrumReady()), SLOT(moreSpectrumLog()));
-  paletteCount = 1;
-  isLog = true;
+  isLog= true;
   m_min = std::numeric_limits<double>::max();
   m_max = std::numeric_limits<double>::min();
   ColormapChange(paletteCount);
@@ -92,13 +91,22 @@ void Spectrogram::mouseDoubleClickEvent (QMouseEvent *event)
   {
       paletteCount++;
       if(paletteCount > 6)
-        paletteCount = 1;
+        paletteCount = 0;
       ColormapChange(paletteCount);
   }
 }
 void Spectrogram::ColormapChange(int count)
 {
-  if(count == 1) {
+  m_palette.deleteMap();
+  if (count == 0) {
+      m_palette.setColorAt(0.0, Qt::black);
+      m_palette.setColorAt(0.55, Qt::darkBlue);
+      m_palette.setColorAt(0.68, Qt::magenta);
+      m_palette.setColorAt(0.8, Qt::red);
+      m_palette.setColorAt(0.9, Qt::yellow);
+      m_palette.setColorAt(1.0, Qt::white);
+    }
+  else if(count == 1) {
       for(int i = 0; i < 32; i++)
         m_palette.setColorAt(scalar32[i], qRgb(redKindlmann32[i],greenKindlmann32[i],blueKindlmann32[i]));
     }
