@@ -14,7 +14,7 @@ HEADERS  += mainwindow.h \
     palette.h \
     colormap.h \
     SuperSpectrogram.h
-#DEFINES += TITLEBAR
+DEFINES += TITLEBAR
 win32 {
 message("* Windows 32 build")
 LIBS += ../SuperSpectrogram/libfftw3f-3.lib
