@@ -8,7 +8,7 @@ Super spectrogram powered by Qt cross platform!
 You might want to switch between this two kind of plot by clicking(Or tap screen on Android) the application screen area.
 
 # Colormap and colormap license
-7 colormap built-in, double click(Or double tap screen on Android) the application screen area to switch 6 colormap display.
+9 colormap built-in, double click(Or double tap screen on Android) the application screen area to switch 9 colormap display.
 
 Colormap itself is converted from csv to c header file. And do not restricted by GPL v2.
 

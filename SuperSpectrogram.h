@@ -19,18 +19,17 @@ private slots:
 private:
     bool isLog;
     void paintEvent(QPaintEvent *);
-    QRgb gradiantAt(double amp);
+    QRgb gradiantAt(float amp);
     void mouseReleaseEvent (QMouseEvent *event);
     void mouseDoubleClickEvent (QMouseEvent *event);
     int paletteCount;
     void ColormapChange(int count);
     SpectrumAnalyser* m_analyser;
-    QList<QVector<double> > m_specs;
     Palette m_palette;
-    double amp;
+    float amp;
     QImage m_image;
 
-    double m_min, m_max;
+    float m_min, m_max;
 };
 
 #endif // SPECTROGRAM_H

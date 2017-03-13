@@ -19,9 +19,9 @@ public:
 
     void setParameters(int nfft, int overlap);
 
-    const QVector<double>& spectrum() const;
+    const QVector<float>& spectrum() const;
 
-    double frequenceUnit() const;
+    float frequenceUnit() const;
 
 signals:
     void spectrumReady();
@@ -41,13 +41,13 @@ private:
     int m_needed;
 
     QAudioFormat m_audioFormat;
-    QVector<double> m_fftin;
+    QVector<float> m_fftin;
 
-    fftw_plan m_plan;
-    QVector<std::complex<double> > m_fftout;
+    fftwf_plan m_plan;
+    QVector<std::complex<float> > m_fftout;
 
-    QVector<double> m_spectrum;
-    double m_frequenceUnit;
+    QVector<float> m_spectrum;
+    float m_frequenceUnit;
 };
 
 #endif // SPECTROGRAMANALYSER_H

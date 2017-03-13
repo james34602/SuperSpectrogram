@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QAudioInput>
-#include "spectrogram.h"
+#include "SuperSpectrogram.h"
 #include "spectrumanalyser.h"
 
 class MainWindow : public QMainWindow
