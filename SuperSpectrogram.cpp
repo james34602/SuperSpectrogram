@@ -52,14 +52,10 @@ void Spectrogram::moreSpectrumLog()
     } else {
         m_image = QImage(size, QImage::Format_RGB32);
     }
-    int last = 0;
     for (int y = 0; y < h; ++y) {
         float amp;
         int index = pow(2.7182818284590452354, y*yscale);
-        for (int i = last; i <= index; i++) {
-          amp = m_analyser->spectrum()[i];
-        }
-        last = index + 1;
+        amp = m_analyser->spectrum()[index];
         m_image.setPixel(h-y-1, w-1, gradiantAt(amp));
     }
     update();
